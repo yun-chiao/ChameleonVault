@@ -1,0 +1,27 @@
+# Foundry
+out/
+cache/
+broadcast/
+lib/
+
+# Node / Next.js
+node_modules/
+.next/
+frontend/.next/
+frontend/node_modules/
+next-env.d.ts
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets / env
+.env
+.env.local
+agent/.env
+frontend/.env.local
+
+# OS
+.DS_Store

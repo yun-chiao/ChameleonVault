@@ -1,0 +1,18 @@
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["lib"]
+solc = "0.8.24"
+optimizer = true
+optimizer_runs = 200
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "forge-std/=lib/forge-std/src/",
+]
+
+# Mantle Testnet (Sepolia) — used by `forge script ... --rpc-url mantle_testnet`
+[rpc_endpoints]
+mantle_testnet = "${MANTLE_RPC_URL}"
+
+[etherscan]
+mantle_testnet = { key = "${MANTLESCAN_API_KEY}", url = "https://explorer.sepolia.mantle.xyz/api" }
