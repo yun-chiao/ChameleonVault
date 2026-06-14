@@ -1,0 +1,80 @@
+# Render Blueprint — ChameleonVault
+# Deploy: push to GitHub, then in Render → "New +" → "Blueprint" → pick this repo.
+#
+# This provisions the Next.js war-room dashboard as a free web service. The AI
+# agent pushes its status to the dashboard's /api/status route, so the two never
+# need a shared filesystem.
+#
+# The agent is included below as an optional background worker (Render workers
+# require a paid plan). For a zero-cost demo, leave it commented out and instead
+# run the agent on your laptop with STATUS_PUSH_URL pointing at the deployed URL.
+
+services:
+  # ---------------------------------------------------------------------------
+  # Frontend — Next.js dashboard (FREE web service)
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: chameleon-frontend
+    runtime: node
+    rootDir: frontend
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm run start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
+      # Whale Attack route (server-side). Set these in the Render dashboard.
+      - key: MANTLE_RPC_URL
+        value: https://rpc.sepolia.mantle.xyz
+      - key: VAULT_ADDRESS
+        sync: false
+      - key: METH_ADDRESS
+        sync: false
+      - key: WHALE_PRIVATE_KEY
+        sync: false
+      # Shared secret so only your agent can push status updates.
+      - key: AGENT_PUSH_SECRET
+        sync: false
+
+  # ---------------------------------------------------------------------------
+  # AI Agent — Python worker (PAID: Render background workers are not free).
+  # Uncomment to run the agent in the cloud; otherwise run it locally.
+  # ---------------------------------------------------------------------------
+  # - type: worker
+  #   name: chameleon-agent
+  #   runtime: python
+  #   rootDir: agent
+  #   plan: starter
+  #   buildCommand: pip install -r requirements.txt
+  #   startCommand: python agent.py
+  #   envVars:
+  #     - key: PYTHON_VERSION
+  #       value: "3.13.1"
+  #     - key: MANTLE_RPC_URL
+  #       value: https://rpc.sepolia.mantle.xyz
+  #     - key: AGENT_PRIVATE_KEY
+  #       sync: false
+  #     - key: VAULT_ADDRESS
+  #       sync: false
+  #     - key: METH_ADDRESS
+  #       sync: false
+  #     - key: USDY_ADDRESS
+  #       sync: false
+  #     - key: OPENAI_API_KEY
+  #       sync: false
+  #     - key: OPENAI_MODEL
+  #       value: gemini-2.5-flash
+  #     - key: OPENAI_BASE_URL
+  #       value: https://generativelanguage.googleapis.com/v1beta/openai/
+  #     - key: LOOP_INTERVAL_SECONDS
+  #       value: "20"
+  #     - key: ESTIMATED_GAS_USD
+  #       value: "0.05"
+  #     # Point the agent at the deployed frontend so the UI gets live data.
+  #     - key: STATUS_PUSH_URL
+  #       value: https://chameleon-frontend.onrender.com/api/status
+  #     - key: AGENT_PUSH_SECRET
+  #       sync: false

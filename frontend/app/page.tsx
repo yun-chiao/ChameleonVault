@@ -167,13 +167,18 @@ export default function Home() {
   const termRef = useRef<HTMLDivElement>(null);
 
   const refresh = useCallback(async () => {
-    try {
-      const res = await fetch(`/status.json?t=${Date.now()}`, {
-        cache: "no-store",
-      });
-      if (res.ok) setStatus(await res.json());
-    } catch {
-      /* keep last good state */
+    // Prefer the live API (agent pushes here on Render); fall back to the
+    // bundled static file for a purely local, file-based setup.
+    for (const url of [`/api/status?t=${Date.now()}`, `/status.json?t=${Date.now()}`]) {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (res.ok) {
+          setStatus(await res.json());
+          return;
+        }
+      } catch {
+        /* try next source */
+      }
     }
   }, []);
 
@@ -193,11 +198,17 @@ export default function Home() {
     setWhaleMsg(null);
     try {
       const res = await fetch("/api/simulate-whale", { method: "POST" });
-      const data = await res.json();
+      const text = await res.text();
+      let data: { ok?: boolean; error?: string; txHash?: string } = {};
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        throw new Error(text.slice(0, 120) || `HTTP ${res.status}`);
+      }
       setWhaleMsg(
         data.ok
           ? `WHALE DEPOSIT CONFIRMED · ${short(data.txHash)}`
-          : `ATTACK FAILED · ${data.error}`
+          : `ATTACK FAILED · ${data.error ?? `HTTP ${res.status}`}`
       );
       setTimeout(refresh, 1500);
     } catch (e) {

@@ -1,539 +1,539 @@
 {
   "latest": {
     "state": "EXECUTE",
-    "rationale": "Despite positive smart money flows and tightening yield spreads, elevated macro risk and high volatility necessitate a slight reduction in mETH allocation.",
-    "txHash": "f78998fb38dd7636b951a508c1c4ce0a9d039106db235311a639651b4a34cbd3",
-    "timestamp": "2026-06-13T09:35:34.988106+00:00",
-    "target_meth_ratio": 0.5866,
-    "current_meth_ratio": 0.5866,
-    "ai_conviction_score": 0.75,
-    "total_vault_usd": 2712964.2,
-    "meth_qty": 892.344372,
-    "usdy_qty": 1121539.4,
+    "rationale": "Positive smart money flow and tightening yield spreads support a higher mETH allocation, but high volatility and moderate macro risk necessitate a cautious increase.",
+    "txHash": "425e3fd287fb2e955b8aa2a5ddffca836121d4231cb274d67cabf5f7a31e5341",
+    "timestamp": "2026-06-14T17:12:07.125436+00:00",
+    "target_meth_ratio": 0.2773,
+    "current_meth_ratio": 0.2773,
+    "ai_conviction_score": 0.65,
+    "total_vault_usd": 4496384.2,
+    "meth_qty": 699.132755,
+    "usdy_qty": 3249536.86,
     "meth_price": 1783.42,
     "usdy_price": 1.0,
     "signals": {
-      "nansen_smart_money_flow": 2.9,
-      "bybit_mnt_funding": 0.0017,
+      "nansen_smart_money_flow": 2.0,
+      "bybit_mnt_funding": 0.0127,
       "elfa_sentiment": "Neutral",
       "zai_predictive_spread": "Tightening",
       "orbit_volatility_regime": "High",
       "bga_sustainability_index": "Medium",
-      "animoca_macro_risk": "Elevated"
+      "animoca_macro_risk": "Moderate"
     }
   },
   "history": [
     {
-      "timestamp": "2026-06-13T09:26:01.113353+00:00",
-      "target_meth_ratio": 0.6649,
-      "current_meth_ratio": 0.6649,
-      "AI_Conviction_Score": 0.85,
-      "dominant_signal": "Z.ai spread Widening",
+      "timestamp": "2026-06-14T17:02:21.220307+00:00",
+      "target_meth_ratio": 0.9214,
+      "current_meth_ratio": 0.9214,
+      "AI_Conviction_Score": 0.98,
+      "dominant_signal": "Elfa Risk-On",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:26:28.971295+00:00",
-      "target_meth_ratio": 0.7225,
-      "current_meth_ratio": 0.7225,
-      "AI_Conviction_Score": 0.75,
-      "dominant_signal": "Z.ai spread Widening",
-      "state": "EXECUTE"
-    },
-    {
-      "timestamp": "2026-06-13T09:27:01.011206+00:00",
-      "target_meth_ratio": 0.7512,
-      "current_meth_ratio": 0.7512,
-      "AI_Conviction_Score": 0.75,
-      "dominant_signal": "Z.ai spread Widening",
-      "state": "EXECUTE"
-    },
-    {
-      "timestamp": "2026-06-13T09:27:37.119651+00:00",
-      "target_meth_ratio": 0.7706,
-      "current_meth_ratio": 0.7706,
-      "AI_Conviction_Score": 0.75,
-      "dominant_signal": "Z.ai spread Widening",
-      "state": "EXECUTE"
-    },
-    {
-      "timestamp": "2026-06-13T09:28:07.214066+00:00",
-      "target_meth_ratio": 0.5753,
-      "current_meth_ratio": 0.5753,
-      "AI_Conviction_Score": 0.8,
-      "dominant_signal": "Elfa sentiment Risk-Off",
-      "state": "EXECUTE"
-    },
-    {
-      "timestamp": "2026-06-13T09:28:35.032772+00:00",
-      "target_meth_ratio": 0.4127,
-      "current_meth_ratio": 0.4127,
+      "timestamp": "2026-06-14T17:02:52.994196+00:00",
+      "target_meth_ratio": 0.9357,
+      "current_meth_ratio": 0.9357,
       "AI_Conviction_Score": 0.88,
-      "dominant_signal": "Elfa sentiment Risk-Off",
+      "dominant_signal": "Elfa Risk-On",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:29:05.098539+00:00",
-      "target_meth_ratio": 0.2813,
-      "current_meth_ratio": 0.2813,
-      "AI_Conviction_Score": 0.85,
-      "dominant_signal": "Elfa sentiment Risk-Off",
+      "timestamp": "2026-06-14T17:03:23.130700+00:00",
+      "target_meth_ratio": 0.9228,
+      "current_meth_ratio": 0.9228,
+      "AI_Conviction_Score": 0.88,
+      "dominant_signal": "Elfa Risk-On",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:29:35.045783+00:00",
-      "target_meth_ratio": 0.2157,
-      "current_meth_ratio": 0.2157,
-      "AI_Conviction_Score": 0.8,
-      "dominant_signal": "Elfa sentiment Risk-Off",
+      "timestamp": "2026-06-14T17:03:55.040656+00:00",
+      "target_meth_ratio": 0.7364,
+      "current_meth_ratio": 0.7364,
+      "AI_Conviction_Score": 0.75,
+      "dominant_signal": "Z.ai spread Widening",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:30:03.246324+00:00",
-      "target_meth_ratio": 0.1328,
-      "current_meth_ratio": 0.1328,
-      "AI_Conviction_Score": 0.9,
-      "dominant_signal": "Elfa sentiment Risk-Off",
-      "state": "EXECUTE"
-    },
-    {
-      "timestamp": "2026-06-13T09:30:31.166320+00:00",
-      "target_meth_ratio": 0.1064,
-      "current_meth_ratio": 0.1064,
-      "AI_Conviction_Score": 0.8,
-      "dominant_signal": "Elfa sentiment Risk-Off",
-      "state": "EXECUTE"
-    },
-    {
-      "timestamp": "2026-06-13T09:31:03.047794+00:00",
-      "target_meth_ratio": 0.0932,
-      "current_meth_ratio": 0.0932,
+      "timestamp": "2026-06-14T17:04:29.101271+00:00",
+      "target_meth_ratio": 0.7082,
+      "current_meth_ratio": 0.7082,
       "AI_Conviction_Score": 0.65,
-      "dominant_signal": "Elfa sentiment Risk-Off",
+      "dominant_signal": "Z.ai spread Widening",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:31:35.143607+00:00",
-      "target_meth_ratio": 0.2366,
-      "current_meth_ratio": 0.2366,
+      "timestamp": "2026-06-14T17:04:59.092156+00:00",
+      "target_meth_ratio": 0.6891,
+      "current_meth_ratio": 0.6891,
+      "AI_Conviction_Score": 0.65,
+      "dominant_signal": "Z.ai spread Widening",
+      "state": "EXECUTE"
+    },
+    {
+      "timestamp": "2026-06-14T17:05:31.093885+00:00",
+      "target_meth_ratio": 0.6445,
+      "current_meth_ratio": 0.6445,
+      "AI_Conviction_Score": 0.75,
+      "dominant_signal": "Z.ai spread Widening",
+      "state": "EXECUTE"
+    },
+    {
+      "timestamp": "2026-06-14T17:06:01.165260+00:00",
+      "target_meth_ratio": 0.6122,
+      "current_meth_ratio": 0.6122,
       "AI_Conviction_Score": 0.7,
-      "dominant_signal": "Elfa sentiment Risk-Off",
+      "dominant_signal": "Z.ai spread Widening",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:32:03.021739+00:00",
-      "target_meth_ratio": 0.1283,
-      "current_meth_ratio": 0.1283,
+      "timestamp": "2026-06-14T17:06:31.050812+00:00",
+      "target_meth_ratio": 0.4311,
+      "current_meth_ratio": 0.4311,
       "AI_Conviction_Score": 0.9,
-      "dominant_signal": "Elfa sentiment Risk-Off",
+      "dominant_signal": "Z.ai spread Widening",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:32:33.081821+00:00",
-      "target_meth_ratio": 0.1041,
-      "current_meth_ratio": 0.1041,
-      "AI_Conviction_Score": 0.75,
-      "dominant_signal": "Elfa sentiment Risk-Off",
+      "timestamp": "2026-06-14T17:06:59.031081+00:00",
+      "target_meth_ratio": 0.3155,
+      "current_meth_ratio": 0.3155,
+      "AI_Conviction_Score": 0.9,
+      "dominant_signal": "Z.ai spread Widening",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:33:09.084489+00:00",
-      "target_meth_ratio": 0.2021,
-      "current_meth_ratio": 0.2021,
+      "timestamp": "2026-06-14T17:07:27.057270+00:00",
+      "target_meth_ratio": 0.1827,
+      "current_meth_ratio": 0.1827,
+      "AI_Conviction_Score": 0.9,
+      "dominant_signal": "Z.ai spread Widening",
+      "state": "EXECUTE"
+    },
+    {
+      "timestamp": "2026-06-14T17:07:57.202357+00:00",
+      "target_meth_ratio": 0.1164,
+      "current_meth_ratio": 0.1164,
+      "AI_Conviction_Score": 0.95,
+      "dominant_signal": "Z.ai spread Widening",
+      "state": "EXECUTE"
+    },
+    {
+      "timestamp": "2026-06-14T17:08:33.009173+00:00",
+      "target_meth_ratio": 0.1032,
+      "current_meth_ratio": 0.1032,
       "AI_Conviction_Score": 0.65,
-      "dominant_signal": "Elfa sentiment Risk-Off",
+      "dominant_signal": "Z.ai spread Widening",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:33:37.146796+00:00",
-      "target_meth_ratio": 0.4261,
-      "current_meth_ratio": 0.4261,
-      "AI_Conviction_Score": 0.85,
-      "dominant_signal": "Orbit vol High",
+      "timestamp": "2026-06-14T17:09:01.060688+00:00",
+      "target_meth_ratio": 0.0566,
+      "current_meth_ratio": 0.0566,
+      "AI_Conviction_Score": 0.9,
+      "dominant_signal": "Z.ai spread Widening",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:34:07.015376+00:00",
-      "target_meth_ratio": 0.573,
-      "current_meth_ratio": 0.573,
-      "AI_Conviction_Score": 0.88,
-      "dominant_signal": "Orbit vol High",
-      "state": "EXECUTE"
-    },
-    {
-      "timestamp": "2026-06-13T09:34:37.048800+00:00",
-      "target_meth_ratio": 0.6265,
-      "current_meth_ratio": 0.6265,
+      "timestamp": "2026-06-14T17:09:31.130655+00:00",
+      "target_meth_ratio": 0.0433,
+      "current_meth_ratio": 0.0433,
       "AI_Conviction_Score": 0.8,
+      "dominant_signal": "Z.ai spread Widening",
+      "state": "EXECUTE"
+    },
+    {
+      "timestamp": "2026-06-14T17:10:01.012028+00:00",
+      "target_meth_ratio": 0.0267,
+      "current_meth_ratio": 0.0267,
+      "AI_Conviction_Score": 0.9,
+      "dominant_signal": "Z.ai spread Widening",
+      "state": "EXECUTE"
+    },
+    {
+      "timestamp": "2026-06-14T17:10:29.895037+00:00",
+      "target_meth_ratio": 0.0184,
+      "current_meth_ratio": 0.0267,
+      "AI_Conviction_Score": 0.75,
+      "dominant_signal": "Z.ai spread Widening",
+      "state": "SKIPPED_MET"
+    },
+    {
+      "timestamp": "2026-06-14T17:11:05.081501+00:00",
+      "target_meth_ratio": 0.0992,
+      "current_meth_ratio": 0.0992,
+      "AI_Conviction_Score": 0.6,
       "dominant_signal": "Orbit vol High",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:35:05.054519+00:00",
-      "target_meth_ratio": 0.6032,
-      "current_meth_ratio": 0.6032,
+      "timestamp": "2026-06-14T17:11:37.127219+00:00",
+      "target_meth_ratio": 0.1746,
+      "current_meth_ratio": 0.1746,
       "AI_Conviction_Score": 0.65,
       "dominant_signal": "Orbit vol High",
       "state": "EXECUTE"
     },
     {
-      "timestamp": "2026-06-13T09:35:34.988106+00:00",
-      "target_meth_ratio": 0.5866,
-      "current_meth_ratio": 0.5866,
-      "AI_Conviction_Score": 0.75,
+      "timestamp": "2026-06-14T17:12:07.125436+00:00",
+      "target_meth_ratio": 0.2773,
+      "current_meth_ratio": 0.2773,
+      "AI_Conviction_Score": 0.65,
       "dominant_signal": "Orbit vol High",
       "state": "EXECUTE"
     }
   ],
   "ledger": [
     {
-      "timestamp": "2026-06-13T09:35:34.988106+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 45035.21,
-      "rationale": "Despite positive smart money flows and tightening yield spreads, elevated macro risk and high volatility necessitate a slight reduction in mETH allocation.",
-      "txHash": "f78998fb38dd7636b951a508c1c4ce0a9d039106db235311a639651b4a34cbd3"
-    },
-    {
-      "timestamp": "2026-06-13T09:35:05.054519+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 63212.07,
-      "rationale": "Elevated macro risk, high volatility, and negative MNT funding outweigh positive smart money flows and tightening spreads, prompting a slight reduction in mETH exposure.",
-      "txHash": "a14739db77bbba3fbd339eb431f3f6ce66a04f1f0e989f565a0620c043ed1b62"
-    },
-    {
-      "timestamp": "2026-06-13T09:34:37.048800+00:00",
+      "timestamp": "2026-06-14T17:12:07.125436+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 145143.58,
-      "rationale": "Positive Nansen flow, tightening yield spreads, and low macro risk justify a higher mETH allocation, tempered slightly by high volatility.",
-      "txHash": "59808f41533460bc844b702eb273edc2c9c96ae260ee41f92e199a3e3f1e4d30"
+      "amount_usd": 461778.66,
+      "rationale": "Positive smart money flow and tightening yield spreads support a higher mETH allocation, but high volatility and moderate macro risk necessitate a cautious increase.",
+      "txHash": "425e3fd287fb2e955b8aa2a5ddffca836121d4231cb274d67cabf5f7a31e5341"
     },
     {
-      "timestamp": "2026-06-13T09:34:07.015376+00:00",
+      "timestamp": "2026-06-14T17:11:37.127219+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 398534.44,
-      "rationale": "Strong smart-money inflows, risk-on sentiment, tightening yield spreads, and low macro risk outweigh high volatility, justifying a significant increase in mETH allocation.",
-      "txHash": "2719eafb27492d50499c6e05b9d43b0c1fd73e286daf469d7febd3c2d96a2db5"
+      "amount_usd": 339027.37,
+      "rationale": "Positive Nansen smart money flow and tightening yield spreads support an increased mETH allocation, though high volatility and elevated macro risk necessitate a cautious approach.",
+      "txHash": "cc3e52976e3f803c5c69c6f1c1bc61ee6a4941367893a9a518b9c4ffe3e12279"
     },
     {
-      "timestamp": "2026-06-13T09:33:37.146796+00:00",
+      "timestamp": "2026-06-14T17:11:05.081501+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 607703.98,
-      "rationale": "Strong risk-on sentiment, positive smart money flow, tightening yield spreads, and low macro risk strongly favor mETH, partially offset by high volatility.",
-      "txHash": "99ca6cb1a3af75ea12ff4454dc576cfffa09b0d8bbeb4858d7ed0a597bcb0efe"
+      "amount_usd": 325987.85,
+      "rationale": "Strong positive Nansen flow and Risk-On sentiment justify a cautious increase in mETH, tempered by high volatility and elevated macro risk.",
+      "txHash": "779ed1484aee28411349fea466b1a26062d3183d4e8b07f06d805006efc623f1"
     },
     {
-      "timestamp": "2026-06-13T09:33:09.084489+00:00",
+      "timestamp": "2026-06-14T17:10:01.012028+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 74639.98,
+      "rationale": "Negative smart money flow, negative MNT funding, widening yield spreads, elevated volatility, and elevated macro risk strongly favor a defensive posture despite positive social sentiment.",
+      "txHash": "969fb4650012426c27c10b689aa9f7e1c18412475ec56618bd90c2c9505a472f"
+    },
+    {
+      "timestamp": "2026-06-14T17:09:31.130655+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 59801.91,
+      "rationale": "Elevated volatility and macro risk, coupled with negative smart money flows and widening yield spreads, necessitate a defensive stance despite positive sentiment.",
+      "txHash": "5ae48ca9d44c83b305d42ddb4668b1be0d1bce0a585c087bb3901774e1f00f3b"
+    },
+    {
+      "timestamp": "2026-06-14T17:09:01.060688+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 209531.5,
+      "rationale": "Strong risk-off signals from negative smart money flow, bearish MNT funding, widening yield spreads, elevated volatility, and high macro risk necessitate a defensive posture despite positive sentiment and sustainability.",
+      "txHash": "39f9e916fde828483c5c508ea97ed077b06a3fb74a574c5a5f18f89f0ea5b678"
+    },
+    {
+      "timestamp": "2026-06-14T17:08:33.009173+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 59352.27,
+      "rationale": "Despite Risk-On sentiment and high sustainability, negative smart money flows, widening yield spreads, elevated volatility, and elevated macro risk necessitate a cautious allocation to mETH.",
+      "txHash": "d96f4a2b9b3a831d87d27805c1423bf707e365baa801056795480f09417d4bc0"
+    },
+    {
+      "timestamp": "2026-06-14T17:07:57.202357+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 298110.27,
+      "rationale": "Elevated macro risk, negative smart money flow, widening yield spreads, and elevated volatility all point to a strong risk-off environment, necessitating a shift to defensive assets.",
+      "txHash": "140aafee0b55558ec322023b03abf72cb0a60bf2d1b8809b4a3bc76298fba6af"
+    },
+    {
+      "timestamp": "2026-06-14T17:07:27.057270+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 597119.82,
+      "rationale": "Strong risk-off signals including negative smart money flow, negative MNT funding, widening yield spreads, and elevated macro risk necessitate a significant reduction in mETH exposure.",
+      "txHash": "777055e56084388d503346d9aa642e3e4144417f0fa7a04a55c80199ac70dede"
+    },
+    {
+      "timestamp": "2026-06-14T17:06:59.031081+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 519782.01,
+      "rationale": "Negative Nansen flow, widening yield spreads, elevated volatility, and high macro risk all indicate a strong risk-off environment.",
+      "txHash": "1c2b9641dbec53cc2d4c1707d081bf072e8b541a8c7558f53d22d7286f614f74"
+    },
+    {
+      "timestamp": "2026-06-14T17:06:31.050812+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 814295.18,
+      "rationale": "A strong rotation into USDY is driven by negative smart money flows, negative MNT funding, widening yield spreads, elevated volatility, and elevated macro risk.",
+      "txHash": "9f0850732b626ed7ef3b02207d56a2bd35bebdd77c8b7c696a9ac480e51dcc32"
+    },
+    {
+      "timestamp": "2026-06-14T17:06:01.165260+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 145233.21,
+      "rationale": "Positive Nansen flow and high sustainability are offset by widening yield spreads, elevated volatility, and elevated macro risk, warranting a slight rotation to USDY.",
+      "txHash": "42e181eeed3e62c49f5dd8239877d59d51b6d2160c11abe64acf6fe627519387"
+    },
+    {
+      "timestamp": "2026-06-14T17:05:31.093885+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 200538.74,
+      "rationale": "Elevated volatility, elevated macro risk, and widening yield spreads indicate a need for de-risking, despite positive smart money flow and high sustainability.",
+      "txHash": "9d91ba14e1b0b2a16bb09e7a3e0e63d358a1a68d5d56293673416ba10244b7bb"
+    },
+    {
+      "timestamp": "2026-06-14T17:04:59.092156+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 85880.94,
+      "rationale": "Despite positive Nansen smart money flow, elevated volatility, widening yield spreads, and high macro risk necessitate a slight de-risking.",
+      "txHash": "52f9f60fcaf86b224b76a5148bef7a267a5d8b51fbcf92bb457c1a65558f66b2"
+    },
+    {
+      "timestamp": "2026-06-14T17:04:29.101271+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 126798.03,
+      "rationale": "Despite strong smart-money inflows and high sustainability, elevated volatility, widening yield spreads, and elevated macro risk necessitate a cautious reduction in mETH exposure.",
+      "txHash": "3c87bd41767d3bf09e5e7edf7652ce3a9cf0be1205e1c9ed8699295803658eec"
+    },
+    {
+      "timestamp": "2026-06-14T17:03:55.040656+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 838126.01,
+      "rationale": "Elevated macro risk, widening predictive yield spreads, and high volatility outweigh positive smart money flows, necessitating a rotation towards USDY.",
+      "txHash": "a62899cb4b1703fe9db21bc5157746ffb2064155a1fcd4ebe4358d1fc7260f85"
+    },
+    {
+      "timestamp": "2026-06-14T17:03:23.130700+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 58003.36,
+      "rationale": "Strong risk-on signals from Nansen, Bybit, Elfa, Z.ai, Orbit, and BGA support a high mETH allocation, slightly tempered by elevated Animoca macro risk.",
+      "txHash": "57cc5a60462a240917888cc8ac7d43a5052cb473e5dcec4f454c2d4f2ab09e0f"
+    },
+    {
+      "timestamp": "2026-06-14T17:02:52.994196+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 265870.49,
-      "rationale": "Strong positive Nansen smart money flow and low Animoca macro risk support a cautious increase in mETH, despite prevailing Elfa risk-off sentiment and high Orbit volatility.",
-      "txHash": "3246d7770c5658525d12f4ea816a59c500ff59cbade4f387788ec163076402aa"
+      "amount_usd": 64298.29,
+      "rationale": "Strong positive Nansen flow, Risk-On sentiment, tightening spreads, low volatility, and a high sustainability index strongly support a high mETH allocation, despite elevated macro risk.",
+      "txHash": "4bc228524c6f086e21c217b16f2c04e543d20f5f636c6abb870e715f8ab1bc53"
     },
     {
-      "timestamp": "2026-06-13T09:32:33.081821+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 65653.73,
-      "rationale": "Dominant risk-off sentiment, widening yield spreads, and high volatility regime outweigh positive smart money flow and low macro risk, necessitating a conservative mETH allocation.",
-      "txHash": "84c7710ac63812bc8bae0fe400253c63970193b02ebc4fe110517960f2bbf714"
-    },
-    {
-      "timestamp": "2026-06-13T09:32:03.021739+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 293814.02,
-      "rationale": "Strong negative smart money flows, risk-off sentiment, high volatility, and widening spreads indicate a need for significant de-risking despite low macro risk.",
-      "txHash": "107e208a06da7f5b872771a0a6aa9ab2f35a22e651f624b18387a7be1871fb2b"
-    },
-    {
-      "timestamp": "2026-06-13T09:31:35.143607+00:00",
+      "timestamp": "2026-06-14T17:02:21.220307+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 389039.07,
-      "rationale": "Despite positive Nansen smart money flow and low Animoca macro risk, a cautious mETH allocation is chosen due to risk-off Elfa sentiment, widening Z.ai predictive spreads, and high Orbit volatility.",
-      "txHash": "422b99b987ca60190834b4be85617e92b2276356e0f77d069f4d868ff9249a53"
+      "amount_usd": 263937.75,
+      "rationale": "Strong smart-money inflows, risk-on sentiment, tightening spreads, low volatility, high sustainability, and low macro risk collectively support a high mETH allocation.",
+      "txHash": "300efd34174da379ef60289f6583130125fb8e4f8e7c60deb6ef446c16c60dc5"
     },
     {
-      "timestamp": "2026-06-13T09:31:03.047794+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 35811.13,
-      "rationale": "Despite positive Nansen flow and low macro risk, strong risk-off sentiment, widening spreads, and high volatility warrant a slight reduction in mETH exposure.",
-      "txHash": "784608380f3cc84961c87be150d08a165586a46b572f0257ddbc9360b518a64b"
-    },
-    {
-      "timestamp": "2026-06-13T09:30:31.166320+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 71622.25,
-      "rationale": "Elevated macro risk, high volatility, widening yield spreads, and risk-off social sentiment outweigh positive smart money flows, justifying a low mETH allocation.",
-      "txHash": "423054767205ba1ca2700878438d996ea78db6d9c8fe7813491a1b0c2b830404"
-    },
-    {
-      "timestamp": "2026-06-13T09:30:03.246324+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 224904.73,
-      "rationale": "Elevated macro risk, high volatility, and risk-off sentiment, despite positive Nansen smart money flow, necessitate a strong defensive allocation to USDY.",
-      "txHash": "40dce2e4725072f3e4d692c779a70b588231778f7e3c5e49f5bf2bf8d091e525"
-    },
-    {
-      "timestamp": "2026-06-13T09:29:35.045783+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 177970.45,
-      "rationale": "Elevated macro risk, high volatility, and risk-off sentiment outweigh positive smart money flows and high sustainability, necessitating a reduction in mETH exposure.",
-      "txHash": "4dea0d753a60997b833027eac8a109698f74db1898087c65111d09ce8bc67a21"
-    },
-    {
-      "timestamp": "2026-06-13T09:29:05.098539+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 356483.5,
-      "rationale": "Despite positive Nansen flow, prevailing 'Risk-Off' sentiment, widening yield spreads, high volatility, and elevated macro risk necessitate a significant reduction in mETH exposure.",
-      "txHash": "b0a72d18edf1b6fd8c0b5a432547284255af1c40852e1ac0007aaa48e306f70a"
-    },
-    {
-      "timestamp": "2026-06-13T09:28:35.032772+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 441127.98,
-      "rationale": "Dominant risk-off sentiment, negative funding, widening spreads, high volatility, and elevated macro risk outweigh positive smart money flows and high sustainability.",
-      "txHash": "3fa20917d85f83166e6e8516e8096bf33e018bbeb56f543752cd84df885d3aa7"
-    },
-    {
-      "timestamp": "2026-06-13T09:28:07.214066+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 529841.91,
-      "rationale": "Dominant risk-off sentiment, widening yield spreads, elevated volatility, and macro risk outweigh positive smart money flows and high sustainability.",
-      "txHash": "0d16cd2150647fd4c85143f38ab0f985e01e50023b939a4880c3480c3ae31023"
-    },
-    {
-      "timestamp": "2026-06-13T09:27:37.119651+00:00",
+      "timestamp": "2026-06-14T17:01:51.130020+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 52631.51,
-      "rationale": "Positive Nansen smart-money flow, risk-on sentiment, low volatility, and high sustainability support a higher mETH allocation, despite elevated macro risk and widening predictive yield spreads.",
-      "txHash": "f7ac1d551c47967c068c4c4dfa2a14175bf1a7ef143d57721d2f197e94c4f420"
+      "amount_usd": 258092.45,
+      "rationale": "Strong positive Nansen flow, tightening yield spreads, low volatility, and low macro risk indicate a robust risk-on environment.",
+      "txHash": "49a4b5dfd48455740b6c7722cd7f23d29c84c4851ac99dd01486134b7f402d4a"
     },
     {
-      "timestamp": "2026-06-13T09:27:01.011206+00:00",
+      "timestamp": "2026-06-14T17:01:23.100501+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 77862.07,
-      "rationale": "Positive Nansen flow, Risk-On sentiment, and low volatility support a higher mETH allocation, partially offset by elevated macro risk and widening yield spreads.",
-      "txHash": "93b0b1da6a29ee34eb89f70be40834ef0abb0c726f72495cc6041210984f6237"
+      "amount_usd": 651076.43,
+      "rationale": "Strong risk-on signals including positive Nansen flow, tightening yield spreads, low volatility, and low macro risk justify a high mETH allocation.",
+      "txHash": "b077a7cf926565ba95e02aa739532def5dbffa206f333c63d81dceed0c3cb62e"
     },
     {
-      "timestamp": "2026-06-13T09:26:28.971295+00:00",
+      "timestamp": "2026-06-14T17:00:55.231900+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 156266.74,
-      "rationale": "Positive Nansen flow, Risk-On sentiment, and low volatility support increasing mETH, despite elevated macro risk and widening yield spreads.",
-      "txHash": "dd8b799a9512e98099d472bbe10496c6de4d922e52246e74d059c73ab65b9dc8"
+      "amount_usd": 267534.86,
+      "rationale": "Positive smart-money flows, tightening yield spreads, low macro risk, and a high sustainability index support a higher mETH allocation, despite high volatility.",
+      "txHash": "a92a35822a7d8c432a5a0310edfd845151306b58c076a5121d16d944e43a7318"
     },
     {
-      "timestamp": "2026-06-13T09:26:01.113353+00:00",
+      "timestamp": "2026-06-14T17:00:26.986803+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 149213.03,
-      "rationale": "Strong smart money inflows, risk-on sentiment, low volatility, and high sustainability index support increased mETH exposure, despite widening yield spreads and elevated macro risk.",
-      "txHash": "37b153bf90c1582543023bf03aa6b617495710f71bb78879d43f92f84462f06c"
+      "amount_usd": 85431.3,
+      "rationale": "Positive Nansen smart money flow and tightening yield spreads support a slight increase in mETH, balanced by elevated macro risk and high volatility.",
+      "txHash": "3cb89c03da32e0844cb8506cd8f1ac8b35c5b35b32719f512be3fa9811ee2ac3"
     },
     {
-      "timestamp": "2026-06-13T09:25:32.972588+00:00",
+      "timestamp": "2026-06-14T16:59:53.104279+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 53956.61,
+      "rationale": "Despite positive Nansen smart-money flow and tightening predictive yield-spreads, an elevated macro risk environment and high volatility regime necessitate a slightly reduced mETH allocation.",
+      "txHash": "8809c749d43c6d22021e3395e3bec6bfa935498a54b018bbaf38a2f62be86af5"
+    },
+    {
+      "timestamp": "2026-06-14T16:59:17.028301+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 197840.9,
+      "rationale": "Elevated macro risk and negative smart money flows temper the positive signals from tightening yield spreads and low volatility, warranting a slight reduction in mETH.",
+      "txHash": "baacbffa61350cd9dae4e19585504d6473b7705c5b4f981822c08ca206575bd4"
+    },
+    {
+      "timestamp": "2026-06-14T16:58:47.213455+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 170862.6,
+      "rationale": "Elevated macro risk and negative smart money flows warrant a cautious stance, despite favorable tightening spreads and low volatility.",
+      "txHash": "14f23f788f1b863e37ad5f0b719a92b1db9babbbe9dcc4351e8433dcc78fa1a5"
+    },
+    {
+      "timestamp": "2026-06-14T16:58:15.062429+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 116456.35,
+      "rationale": "Elevated macro risk and negative smart money flow suggest a cautious stance, partially mitigated by tightening yield spreads and a low volatility regime.",
+      "txHash": "ff6b51a6502c7edd8da4a8614ad96e44974deb2036d3db236902ca55e74c173d"
+    },
+    {
+      "timestamp": "2026-06-14T16:57:42.989962+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 244709.37,
-      "rationale": "Positive Nansen flows, risk-on sentiment, low volatility, and high sustainability index support a higher mETH allocation, tempered by elevated macro risk and widening yield spreads.",
-      "txHash": "b8590cdc65f57bbee7dc807f9f7965d38cc400c25fffe5cdf466dfa1d7a8411c"
+      "amount_usd": 103866.48,
+      "rationale": "Low volatility, tightening yield spreads, and a high sustainability index support a modest increase in mETH, despite negative smart money flows and elevated macro risk.",
+      "txHash": "4449d6521c174b9b70584fc5df4764bae0c508c178a0e24e20cb0796ecab2225"
     },
     {
-      "timestamp": "2026-06-13T09:25:05.089276+00:00",
+      "timestamp": "2026-06-14T16:57:11.100276+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 624524.36,
-      "rationale": "Strong smart-money inflows, positive MNT funding, risk-on sentiment, low volatility, and high sustainability index outweigh the widening yield spread and moderate macro risk.",
-      "txHash": "dd96bdcd0bc8ccb3419c6ba19e0bd6b4dc7cf188243044571771a0bf03a19f02"
+      "amount_usd": 229765.23,
+      "rationale": "Positive smart-money flow, tightening yield spreads, low volatility, and high sustainability index support a higher mETH allocation, despite elevated macro risk.",
+      "txHash": "105657246b23d439cbaae8842975bf787652b2f99109f7ee380f78520efda1dc"
     },
     {
-      "timestamp": "2026-06-13T09:24:35.166240+00:00",
+      "timestamp": "2026-06-14T16:56:41.000563+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 706998.47,
-      "rationale": "Strong Nansen smart-money flow, low macro risk, and high sustainability index support a higher mETH allocation, while risk-off sentiment, widening yield spreads, and high volatility warrant a tempered approach.",
-      "txHash": "884c3bd43637d1a5a29ea45f1690aaed7cf40906cd2ecd92fc2bce91a78a07cf"
+      "amount_usd": 325088.58,
+      "rationale": "Positive Nansen smart money flow, tightening yield spreads, low volatility, and positive MNT funding rates support a higher mETH allocation, tempered by elevated macro risk.",
+      "txHash": "f6aad402bdd6c4c784ef69b0e0097b20e23fce4e0f02d812b9f094881eed2324"
     },
     {
-      "timestamp": "2026-06-13T09:24:01.066253+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 51275.02,
-      "rationale": "Strong risk-off sentiment, negative smart money flow, widening spreads, and high volatility necessitate a defensive stance with a very low mETH allocation.",
-      "txHash": "442b6f7a3abd65444d5123b6c9a9dad05bbbc4e97172ac31c934a1e4515e0586"
-    },
-    {
-      "timestamp": "2026-06-13T09:23:31.062638+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 75420.4,
-      "rationale": "Strong risk-off sentiment, negative smart money flows, high volatility, and elevated macro risk necessitate a significant reduction in mETH exposure.",
-      "txHash": "ee88c774450397fd40cf8a8b6997fa9dea6cf1aa7a74a7ac730ce4a344b5a790"
-    },
-    {
-      "timestamp": "2026-06-13T09:23:03.397175+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 69180.59,
-      "rationale": "Strong risk-off signals, including negative Nansen smart money flow, risk-off sentiment, high volatility, and elevated macro risk, necessitate a defensive allocation to USDY.",
-      "txHash": "c3b9ae9a771d93b8518e33aeac706eb4cb5d2cbc5f75df064f79b11d1c95932e"
-    },
-    {
-      "timestamp": "2026-06-13T09:22:35.049990+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 138903.77,
-      "rationale": "Strong negative smart-money flow, Risk-Off sentiment, high volatility, and elevated macro risk collectively necessitate a significant reduction in mETH exposure.",
-      "txHash": "8d55673acd409ab608710fc0a7a5822ccfdac1d567970a753f268e603d9efa19"
-    },
-    {
-      "timestamp": "2026-06-13T09:22:07.249962+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 277807.53,
-      "rationale": "Elevated macro risk, high volatility, and widening yield spreads outweigh positive smart money flows, necessitating a rotation into USDY.",
-      "txHash": "98a947efdf4fbea37fc99d06c3c77c9d665c7279b2e135f5abb5d767de2f7c2b"
-    },
-    {
-      "timestamp": "2026-06-13T09:21:37.185067+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 284047.35,
-      "rationale": "Negative smart-money flows, high volatility, and elevated macro risk outweigh the high sustainability index, necessitating a significant reduction in mETH exposure.",
-      "txHash": "92815dbabbf8a0d29800a57af89b740742db7d7b6a5796d4137d19d558451795"
-    },
-    {
-      "timestamp": "2026-06-13T09:21:09.003053+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 296798.28,
-      "rationale": "Negative smart money flow, high volatility, and elevated macro risk dictate a significant reduction in mETH exposure.",
-      "txHash": "7a432f4e5e96ea0fa55b9cefbde03003dd1dde4b2311300025fd9a359f479dd4"
-    },
-    {
-      "timestamp": "2026-06-13T09:20:41.060524+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 593596.57,
-      "rationale": "Negative smart money flow, high volatility, and elevated macro risk indicate a strong risk-off environment.",
-      "txHash": "f8e6cb60ebaa2a0b66e52304771abe7079a26c272f31734eb7f4d3b3b8b8223a"
-    },
-    {
-      "timestamp": "2026-06-13T09:20:09.075198+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 183667.68,
-      "rationale": "Negative Nansen smart-money flow, negative Bybit funding, and elevated volatility outweigh low macro risk, prompting a rotation towards USDY.",
-      "txHash": "6a5d4816360fb68f5df3b7c599e5161ebf6b54426bf89412d87434f1ab69a45a"
-    },
-    {
-      "timestamp": "2026-06-13T09:19:41.048622+00:00",
+      "timestamp": "2026-06-14T16:56:11.051151+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 67010.22,
-      "rationale": "Despite negative smart-money flow and elevated volatility, strong risk-on sentiment, low macro risk, high sustainability, and positive MNT funding support a higher mETH allocation.",
-      "txHash": "be08bc667799a44f7b988c6609d7c58cad28c5b902cf1e9cbb19019763f18f83"
+      "amount_usd": 424908.31,
+      "rationale": "Strong positive smart money flow, risk-on sentiment, low volatility, and high sustainability index outweigh elevated macro risk, justifying an increased mETH allocation.",
+      "txHash": "bbd4bc1dd9a85536f009bb8cd41bc540fb8d874dd920969d9168018c75f194a6"
     },
     {
-      "timestamp": "2026-06-13T09:19:11.050650+00:00",
+      "timestamp": "2026-06-14T16:55:41.011135+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 52902.8,
-      "rationale": "Risk-On sentiment, low macro risk, and high sustainability support a higher mETH allocation, though tempered by negative smart money flows and elevated volatility.",
-      "txHash": "3a328b5a7d339034b1f6d7219f46a8216426da3a60bda211bdcfe1b27d80e9f7"
+      "amount_usd": 849816.61,
+      "rationale": "Increasing mETH due to strong Nansen smart-money flow and Risk-On sentiment, balanced by elevated macro risk and volatility.",
+      "txHash": "0283d32583d97d2694ada3180662092404e32f5a336f28325c1c10e8493e8741"
     },
     {
-      "timestamp": "2026-06-13T09:18:41.165042+00:00",
+      "timestamp": "2026-06-14T16:55:11.300669+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 78133.37,
-      "rationale": "Risk-On sentiment, low macro risk, and high sustainability support a higher mETH allocation, but negative smart money flow and high volatility temper the increase.",
-      "txHash": "c82d6076746764d05abc241bbb23262f0e5d4ee34f670eb1c203dc0036c364a9"
+      "amount_usd": 576436.45,
+      "rationale": "Positive Nansen smart-money flow and Risk-On sentiment support increasing mETH exposure, while elevated volatility and macro risk necessitate a balanced, risk-aware allocation.",
+      "txHash": "6a42c10ddf9af1cb38de143488601eb9ae028cca71d6fd2115560f7d514c0440"
     },
     {
-      "timestamp": "2026-06-13T09:18:09.024433+00:00",
+      "timestamp": "2026-06-14T16:54:37.039195+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 455235.39,
-      "rationale": "Strong positive Nansen flow, Bybit funding, Risk-On sentiment, High sustainability, and Low macro risk strongly support a higher mETH allocation, despite elevated volatility.",
-      "txHash": "dfade5659d6a9c37133e227c69803e7dee167c731d06f793c034445f2654eb6f"
+      "amount_usd": 252696.79,
+      "rationale": "Positive Nansen smart money flow and Risk-On sentiment support increasing mETH, while elevated volatility and macro risk warrant a cautious approach.",
+      "txHash": "cad5608f1b7f880cf79dc99352328d1eb506641dacc45a2fdbf9d56963979a4d"
     },
     {
-      "timestamp": "2026-06-13T09:17:41.030477+00:00",
+      "timestamp": "2026-06-14T16:54:04.979452+00:00",
       "action": "mETH -> USDY",
-      "amount_usd": 93325.97,
-      "rationale": "Elevated volatility and macro risk, coupled with negative smart money flow, outweigh positive sentiment, warranting a slight reduction in mETH exposure.",
-      "txHash": "ff51f63219a11aaa55e625958f7c74a22fb31e71f2c0436caf19d9c3407de241"
+      "amount_usd": 55755.16,
+      "rationale": "Elevated volatility and macro risk, combined with negative smart money flow, outweigh the positive sentiment and high sustainability index, warranting a conservative mETH allocation.",
+      "txHash": "d7bec4f734567c72c6f71d49f876f5ab578039df3b08f3ab5cf96d6a2235da30"
     },
     {
-      "timestamp": "2026-06-13T09:17:11.124261+00:00",
+      "timestamp": "2026-06-14T16:52:59.001915+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 355940.9,
-      "rationale": "Strong positive smart money flow, risk-on sentiment, and low macro risk justify a higher mETH allocation, despite elevated volatility.",
-      "txHash": "e7d8f4842abbe96fd63484dba7ff429df735410a2a30aca0ab3f1b01e2c64bd3"
+      "amount_usd": 89927.68,
+      "rationale": "Elevated volatility and macro risk, coupled with negative smart money flow, temper the positive sentiment and high sustainability, leading to a cautiously increased mETH allocation.",
+      "txHash": "8482d94ffc04186cfa60dd2f18a8656941aef24e5515355e22f17c9e5b1b49b7"
     },
     {
-      "timestamp": "2026-06-13T09:16:41.245205+00:00",
+      "timestamp": "2026-06-14T16:52:27.093560+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 89478.05,
+      "rationale": "Despite Risk-On sentiment, negative smart money flow, negative MNT funding, elevated volatility, and elevated macro risk collectively warrant a low mETH allocation.",
+      "txHash": "f946150175eb34a8418081c96df0ba53f95836d02b808970edda5d7db710e0a8"
+    },
+    {
+      "timestamp": "2026-06-14T16:51:57.127033+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 89478.05,
+      "rationale": "Dominant signals from negative smart-money flow, elevated volatility, and elevated macro risk outweigh positive sentiment, necessitating a defensive allocation.",
+      "txHash": "108c49f2c30392e756a288eaeb25bea86d5d51d02089ffadfb97aced87cff850"
+    },
+    {
+      "timestamp": "2026-06-14T16:51:23.039109+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 178056.81,
+      "rationale": "Strong risk-off sentiment, negative smart money flows, elevated volatility, and high macro risk necessitate a defensive stance.",
+      "txHash": "b2244d4b0934e6bcb1fb84e9c7672c4020bc1ec86b8803c3856faaa3191d0478"
+    },
+    {
+      "timestamp": "2026-06-14T16:50:53.100464+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 491904.43,
+      "rationale": "Negative Nansen smart-money flow, Risk-Off social sentiment, elevated volatility, and elevated macro risk collectively indicate a strong risk-off environment.",
+      "txHash": "f27c76bad2b131a8739996ea7b2380145ff0e081e2227e7d496631eef48aaa00"
+    },
+    {
+      "timestamp": "2026-06-14T16:50:23.210065+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 533720.8,
+      "rationale": "Strong risk-off signals from negative smart money flow, high volatility, elevated macro risk, and risk-off sentiment necessitate a significant reduction in mETH exposure.",
+      "txHash": "8f1028cbd1a738d026af624835f199c9e268d9c33e0430b48867021cd0f1e81f"
+    },
+    {
+      "timestamp": "2026-06-14T16:49:53.131408+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 617803.19,
+      "rationale": "Risk-Off sentiment, high volatility, and elevated macro risk collectively indicate a need to significantly reduce mETH exposure.",
+      "txHash": "a90109d4fb03c8aef8fee5f6a510bcc63aba2c2eb751f392358469fd4128c4b4"
+    },
+    {
+      "timestamp": "2026-06-14T16:49:25.186750+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 650626.79,
+      "rationale": "Strong risk-off sentiment, high volatility, negative smart money flows, and elevated macro risk necessitate a significant reduction in mETH exposure.",
+      "txHash": "684c00e5919c1ba9e57392ae866945d94c11cb4b2e2713b30ea2b0d1504adef2"
+    },
+    {
+      "timestamp": "2026-06-14T16:48:57.229127+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 402426.39,
+      "rationale": "Elevated macro risk, high volatility, and negative smart money flows outweigh risk-on sentiment and tightening spreads, warranting a reduction in mETH.",
+      "txHash": "c6dbc2896ae6da81ac59b7ba38beaf9b3af61ec212afdb8dd0b1b9c5a1b3ccac"
+    },
+    {
+      "timestamp": "2026-06-14T16:48:27.081763+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 440042.79,
-      "rationale": "Positive Nansen flow, Risk-On sentiment, low macro risk, and high sustainability support increasing mETH, while elevated volatility and widening spreads suggest tempered risk-taking.",
-      "txHash": "32939ec4d4b056084b96f229e118a02f253876a5eb35b5b159479e808d86cecb"
+      "amount_usd": 409620.6,
+      "rationale": "Strong risk-on sentiment, positive smart money flow, and tightening predictive spreads support a higher mETH allocation, despite high volatility and moderate macro risk.",
+      "txHash": "b456f542f700c7bb8c3fbdb1ec78e9a2f7e4e4f8168ddf6e933293a71836d760"
     },
     {
-      "timestamp": "2026-06-13T09:16:09.222152+00:00",
+      "timestamp": "2026-06-14T16:47:57.191843+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 305304.49,
+      "rationale": "Elevated volatility and negative smart money flows override positive sentiment and tightening spreads, prompting a significant reduction in mETH exposure.",
+      "txHash": "94e619635c4948912e6c24585602855531a88fdda2530bd97e7b461ce8b0a4c2"
+    },
+    {
+      "timestamp": "2026-06-14T16:47:21.162233+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 391752.03,
-      "rationale": "Risk-On sentiment and low macro risk support a higher mETH allocation, but negative smart money flow, widening yield spreads, and elevated volatility necessitate a cautious approach.",
-      "txHash": "b144b9f790f64811fab39c667d83a5d7f993588742d13025f898ae9db7409821"
+      "amount_usd": 199189.82,
+      "rationale": "Strong positive Nansen smart-money flow, Risk-On sentiment, and positive MNT funding support a higher mETH allocation, despite high volatility and moderate macro risk.",
+      "txHash": "bd20f96ed79a706f7c915fdae2cf14d0515ed12423691ee361b34bf1b1ed27f1"
     },
     {
-      "timestamp": "2026-06-13T09:15:35.143232+00:00",
+      "timestamp": "2026-06-14T16:46:51.030084+00:00",
+      "action": "mETH -> USDY",
+      "amount_usd": 186150.31,
+      "rationale": "Negative Nansen smart-money flow and elevated volatility indicate caution, despite \"Risk-On\" social sentiment, prompting a reduction in mETH exposure.",
+      "txHash": "40ed6a6c10259173785d124632bd796c06e2272c12b5dfa10ac842fe22a3ab39"
+    },
+    {
+      "timestamp": "2026-06-14T16:46:19.228470+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 105534.31,
-      "rationale": "A cautious increase in mETH is warranted by low macro risk and risk-on sentiment, despite negative smart money flows, widening spreads, and elevated volatility.",
-      "txHash": "6fe055a16e87013543f329034fd1ec1731a65d27c13c1f590abed45448d7a23c"
+      "amount_usd": 526076.95,
+      "rationale": "Strong positive Nansen smart money flow, Risk-On social sentiment, and a low volatility regime justify a higher mETH allocation.",
+      "txHash": "ca6b9e58897cf8b3781b89f5bc40fd134bd709c51377b899ce69ec8ac324de0d"
     },
     {
-      "timestamp": "2026-06-13T09:15:03.166196+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 141888.03,
-      "rationale": "Strong risk-off signals from negative Nansen flow, risk-off sentiment, widening spreads, and elevated volatility necessitate a significant reduction in mETH exposure.",
-      "txHash": "de23796259479b48f7a068ce76103de8d018bd243a5dd58462c636f00e11c2a5"
-    },
-    {
-      "timestamp": "2026-06-13T09:14:35.125323+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 202387.13,
-      "rationale": "Strong risk-off signals including negative Nansen flow, risk-off sentiment, widening spreads, and elevated volatility justify a significantly reduced mETH allocation.",
-      "txHash": "5a788c3634540338c451123ec5287b8e478cd29415c3f1bbbeb4fc610cbe95fb"
-    },
-    {
-      "timestamp": "2026-06-13T09:14:05.115191+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 404774.26,
-      "rationale": "Strong risk-off sentiment, negative smart money flows, widening yield spreads, and elevated macro risk collectively necessitate a significant reduction in mETH exposure.",
-      "txHash": "9d275007850dce5a39ffadb523476934000c454b7539b90acc112516461e8c3c"
-    },
-    {
-      "timestamp": "2026-06-13T09:13:37.016695+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 185024.16,
-      "rationale": "Despite Risk-On sentiment, negative smart money flow, widening yield spreads, and elevated volatility necessitate a defensive posture.",
-      "txHash": "b2021432d8856773e3dc864ac88b8f4de87f32fdba35508591061019e302cbe6"
-    },
-    {
-      "timestamp": "2026-06-13T09:13:07.057448+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 44763.91,
-      "rationale": "Despite positive Nansen smart money flow and Risk-On sentiment, widening yield spreads and elevated volatility necessitate a slight rotation into USDY for risk management.",
-      "txHash": "977ca6f7d35b008cfe2a22796588047755559968193b2ff7354054c32be4d5b4"
-    },
-    {
-      "timestamp": "2026-06-13T09:12:35.255162+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 415083.52,
-      "rationale": "Elevated macro risk, widening yield spreads, negative smart money flow, and elevated volatility outweigh positive social sentiment, necessitating a rotation into USDY.",
-      "txHash": "6c577267fee63bf1a90328e7e608b84c15c447f5e260ef868d033d8e88239e21"
-    },
-    {
-      "timestamp": "2026-06-13T09:12:05.056410+00:00",
-      "action": "mETH -> USDY",
-      "amount_usd": 97938.01,
-      "rationale": "Despite positive sentiment and low macro risk, negative smart money flow, widening yield spreads, and elevated volatility warrant a slight reduction in mETH exposure.",
-      "txHash": "f4d2e885df4f57c11a1fe6b857e174d41776c13f1e551becb311e8613036543e"
-    },
-    {
-      "timestamp": "2026-06-13T09:11:34.979622+00:00",
+      "timestamp": "2026-06-14T16:45:51.107243+00:00",
       "action": "USDY -> mETH",
-      "amount_usd": 75420.4,
-      "rationale": "Strong risk-on sentiment, tightening yield spreads, and low macro risk outweigh negative smart money flow and high volatility, justifying an increased mETH allocation.",
-      "txHash": "36110542708457d431a9ec47d3318ba8992d70d3b5fa35281a42eba1da1751b3"
-    },
-    {
-      "timestamp": "2026-06-13T09:11:05.194267+00:00",
-      "action": "USDY -> mETH",
-      "amount_usd": 181226.01,
-      "rationale": "Risk-On sentiment, tightening predictive yield spreads, and low macro risk justify a higher mETH allocation, tempered by high volatility and negative smart money flows.",
-      "txHash": "49047c80974c9d05873108f7598ab0ae1aa51f1e6607e8b2ad4d5030c21d6b84"
+      "amount_usd": 287768.59,
+      "rationale": "Strong positive Nansen flow, Risk-On sentiment, and tightening yield spreads support a higher mETH allocation, balanced by elevated volatility and moderate macro risk.",
+      "txHash": "d7f98f6a8430cf2b935392673c72f26b61517028adb997f76f86c7c5de780004"
     }
   ]
 }

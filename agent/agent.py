@@ -27,19 +27,26 @@ import os
 import random
 import time
 import traceback
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-from dotenv import load_dotenv
-from web3 import Web3
+# Print immediately so a slow first import (common on iCloud-synced Desktop folders)
+# does not look like a hang.
+print("[boot] Chameleon agent starting…", flush=True)
 
-# OpenAI SDK (>=1.0 style client).
-try:
-    from openai import OpenAI
-except Exception:  # pragma: no cover - allows dry runs without the package
-    OpenAI = None
+from dotenv import load_dotenv
 
 load_dotenv()
+
+# Heavy deps (web3) are lazy-loaded — see _ensure_web3().
+# LLM calls use stdlib HTTP (no openai package import — avoids multi-minute stalls).
+Web3 = None  # type: ignore
+_w3 = None
+_account = None
+_vault = None
+_web3_ready = False
 
 # ---------------------------------------------------------------------------
 # Configuration (env-driven so the same file runs locally + on Byreal infra)
@@ -60,11 +67,20 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "")
 
 LOOP_INTERVAL_SECONDS = int(os.getenv("LOOP_INTERVAL_SECONDS", "180"))
+RPC_TIMEOUT_SECONDS = int(os.getenv("RPC_TIMEOUT_SECONDS", "15"))
+LLM_TIMEOUT_SECONDS = float(os.getenv("LLM_TIMEOUT_SECONDS", "30"))
+TX_RECEIPT_TIMEOUT_SECONDS = int(os.getenv("TX_RECEIPT_TIMEOUT_SECONDS", "45"))
 
 # Where the frontend reads agent state from. Defaults to the Next.js public dir.
 STATUS_PATH = Path(
     os.getenv("STATUS_JSON_PATH", "../frontend/public/status.json")
 ).resolve()
+
+# Optional: push status to a deployed frontend's /api/status (used on Render,
+# where the agent and frontend don't share a filesystem). Leave empty for a
+# purely local, file-based setup.
+STATUS_PUSH_URL = os.getenv("STATUS_PUSH_URL", "").strip()
+AGENT_PUSH_SECRET = os.getenv("AGENT_PUSH_SECRET", "").strip()
 
 # --- Demo constants -------------------------------------------------------
 DEFAULT_METH_PRICE = 1783.42        # oracle fallback price
@@ -93,27 +109,73 @@ VAULT_ABI = json.loads(
 )
 
 # ---------------------------------------------------------------------------
-# Web3 wiring
+# Lazy Web3 / LLM wiring (avoids multi-minute import stalls on first launch)
 # ---------------------------------------------------------------------------
-w3 = Web3(Web3.HTTPProvider(RPC_URL))
-account = w3.eth.account.from_key(PRIVATE_KEY) if PRIVATE_KEY else None
-vault = (
-    w3.eth.contract(address=Web3.to_checksum_address(VAULT_ADDRESS), abi=VAULT_ABI)
-    if VAULT_ADDRESS
-    else None
-)
+def _ensure_web3():
+    """Import web3 and connect once. First call can take 30–90s if the repo
+    lives on an iCloud-synced Desktop — that is normal, not a deadlock."""
+    global Web3, _w3, _account, _vault, _web3_ready
+    if _web3_ready:
+        return _w3, _account, _vault
+    print("[boot] loading web3 (first launch may take up to ~90s)…", flush=True)
+    from web3 import Web3 as _Web3
 
-def _build_llm_client():
-    """OpenAI-compatible client. If OPENAI_BASE_URL is set (e.g. Gemini's
-    OpenAI-compatible endpoint), route requests there; otherwise use OpenAI."""
-    if not (OpenAI and OPENAI_API_KEY):
-        return None
-    if OPENAI_BASE_URL:
-        return OpenAI(api_key=OPENAI_API_KEY, base_url=OPENAI_BASE_URL)
-    return OpenAI(api_key=OPENAI_API_KEY)
+    Web3 = _Web3
+    _w3 = _Web3(
+        _Web3.HTTPProvider(RPC_URL, request_kwargs={"timeout": RPC_TIMEOUT_SECONDS})
+    )
+    _account = _w3.eth.account.from_key(PRIVATE_KEY) if PRIVATE_KEY else None
+    _vault = (
+        _w3.eth.contract(address=_Web3.to_checksum_address(VAULT_ADDRESS), abi=VAULT_ABI)
+        if VAULT_ADDRESS
+        else None
+    )
+    _web3_ready = True
+    print("[boot] web3 ready", flush=True)
+    return _w3, _account, _vault
 
 
-openai_client = _build_llm_client()
+def _call_llm(user_payload, use_response_format: bool):
+    """Call OpenAI-compatible chat/completions via stdlib HTTP (Gemini or OpenAI)."""
+    if not OPENAI_API_KEY:
+        raise RuntimeError("OPENAI_API_KEY not set")
+
+    base = (OPENAI_BASE_URL or "https://api.openai.com/v1/").rstrip("/")
+    url = f"{base}/chat/completions"
+
+    body = {
+        "model": OPENAI_MODEL,
+        "temperature": 0.4,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {
+                "role": "user",
+                "content": (
+                    "Current vault + live partner signals:\n"
+                    + json.dumps(user_payload, indent=2)
+                    + "\nReturn your allocation decision as strict JSON."
+                ),
+            },
+        ],
+    }
+    if use_response_format:
+        body["response_format"] = {"type": "json_object"}
+
+    data = json.dumps(body).encode("utf-8")
+    req = urllib.request.Request(
+        url,
+        data=data,
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+        },
+        method="POST",
+    )
+
+    with urllib.request.urlopen(req, timeout=LLM_TIMEOUT_SECONDS) as resp:
+        payload = json.loads(resp.read().decode("utf-8"))
+
+    return payload["choices"][0]["message"]["content"]
 
 
 # ===========================================================================
@@ -129,6 +191,9 @@ def fetch_vault_state():
     meth_price, usdy_price = DEFAULT_METH_PRICE, DEFAULT_USDY_PRICE
 
     try:
+        w3, _, vault = _ensure_web3()
+        if vault is None:
+            raise RuntimeError("VAULT_ADDRESS not configured")
         meth_raw, usdy_raw, meth_px_raw, usdy_px_raw = vault.functions.getVaultState().call()
         # Token balances are 18-decimals; oracle prices are 1e8.
         meth_qty = meth_raw / 1e18
@@ -318,27 +383,6 @@ def _extract_json(raw: str) -> dict:
     return json.loads(text)
 
 
-def _call_llm(user_payload, use_response_format: bool):
-    kwargs = dict(
-        model=OPENAI_MODEL,
-        temperature=0.4,
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {
-                "role": "user",
-                "content": (
-                    "Current vault + live partner signals:\n"
-                    + json.dumps(user_payload, indent=2)
-                    + "\nReturn your allocation decision as strict JSON."
-                ),
-            },
-        ],
-    )
-    if use_response_format:
-        kwargs["response_format"] = {"type": "json_object"}
-    return openai_client.chat.completions.create(**kwargs)
-
-
 def get_ai_decision(state, signals):
     """Call the LLM and parse its JSON decision; fall back to static on failure.
 
@@ -346,7 +390,7 @@ def get_ai_decision(state, signals):
     OPENAI_BASE_URL). If the provider rejects `response_format`, we retry once
     without it and parse JSON out of the raw text.
     """
-    if openai_client is None:
+    if not OPENAI_API_KEY:
         print("[ai] LLM not configured -> static fallback")
         return static_fallback_decision(state, signals)
 
@@ -358,13 +402,12 @@ def get_ai_decision(state, signals):
 
     try:
         try:
-            resp = _call_llm(user_payload, use_response_format=True)
+            raw = _call_llm(user_payload, use_response_format=True)
         except Exception as exc:
             # Some providers reject response_format=json_object; retry plainly.
             print(f"[ai] response_format unsupported ({exc}); retrying plain")
-            resp = _call_llm(user_payload, use_response_format=False)
+            raw = _call_llm(user_payload, use_response_format=False)
 
-        raw = resp.choices[0].message.content
         decision = _extract_json(raw)
 
         # Validate + clamp.
@@ -439,6 +482,7 @@ def evaluate_trade(state, decision):
 # ===========================================================================
 def execute_rebalance(state, plan, rationale):
     """Send ChameleonVault.rebalance() on-chain. Returns the tx hash hex or None."""
+    w3, account, vault = _ensure_web3()
     if vault is None or account is None:
         print("[exec] no signer/vault configured -> simulating tx hash")
         return "0xSIMULATED" + os.urandom(28).hex()
@@ -463,7 +507,7 @@ def execute_rebalance(state, plan, rationale):
         signed = account.sign_transaction(tx)
         tx_hash = w3.eth.send_raw_transaction(signed.raw_transaction)
         print(f"[exec] rebalance sent: {tx_hash.hex()}")
-        w3.eth.wait_for_transaction_receipt(tx_hash, timeout=120)
+        w3.eth.wait_for_transaction_receipt(tx_hash, timeout=TX_RECEIPT_TIMEOUT_SECONDS)
         return tx_hash.hex()
     except Exception as exc:
         print(f"[exec] transaction failed: {exc}")
@@ -532,9 +576,35 @@ def write_status(status, state, signals, decision, verdict, detail, tx_hash):
         )
         status["ledger"] = status["ledger"][:50]
 
-    STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    STATUS_PATH.write_text(json.dumps(status, indent=2))
-    print(f"[status] wrote {STATUS_PATH} ({verdict})")
+    # Best-effort local file write (for the file-based local setup).
+    try:
+        STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
+        STATUS_PATH.write_text(json.dumps(status, indent=2))
+        print(f"[status] wrote {STATUS_PATH} ({verdict})")
+    except Exception as exc:
+        print(f"[status] local write skipped ({exc})")
+
+    # Push to the deployed frontend if configured (Render / cloud setup).
+    _push_status(status, verdict)
+
+
+def _push_status(status, verdict):
+    """POST the status snapshot to a deployed frontend's /api/status route."""
+    if not STATUS_PUSH_URL:
+        return
+    try:
+        data = json.dumps(status).encode("utf-8")
+        headers = {"Content-Type": "application/json"}
+        if AGENT_PUSH_SECRET:
+            headers["x-agent-secret"] = AGENT_PUSH_SECRET
+        req = urllib.request.Request(
+            STATUS_PUSH_URL, data=data, headers=headers, method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            resp.read()
+        print(f"[status] pushed to {STATUS_PUSH_URL} ({verdict})")
+    except Exception as exc:
+        print(f"[status] push failed ({exc})")
 
 
 def _sym(addr):
@@ -607,14 +677,17 @@ def _apply_target_locally(state, target_ratio):
 
 
 def main():
-    print("=" * 64)
-    print(" CHAMELEON AGENT online · root@byreal-skills:~/chameleon-agent")
-    print(f" RPC={RPC_URL}  VAULT={VAULT_ADDRESS or '(unset)'}")
+    print("=" * 64, flush=True)
+    print(" CHAMELEON AGENT online · root@byreal-skills:~/chameleon-agent", flush=True)
+    print(f" RPC={RPC_URL}  VAULT={VAULT_ADDRESS or '(unset)'}", flush=True)
     provider = "gemini" if "generativelanguage.googleapis" in OPENAI_BASE_URL else (
         "openai-compatible" if OPENAI_BASE_URL else "openai"
     )
-    print(f" model={OPENAI_MODEL}  provider={provider}  interval={LOOP_INTERVAL_SECONDS}s")
-    print("=" * 64)
+    print(f" model={OPENAI_MODEL}  provider={provider}  interval={LOOP_INTERVAL_SECONDS}s", flush=True)
+    print("=" * 64, flush=True)
+
+    # Warm up web3 once at startup (shows [boot] progress lines).
+    _ensure_web3()
 
     while True:
         try:
